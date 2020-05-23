@@ -1,5 +1,6 @@
 package bingo;
 
+//en esta clase se controlan los precios de los cartones por estilo de juego
 public class EstiloJuego {
     private int CartonLLeno = 1000;
     private int CartonLinea = 500;

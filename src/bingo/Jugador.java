@@ -2,15 +2,17 @@ package bingo;
 
 public class Jugador {
     private String nombre;
-    private Presupuesto presupuesto;
+    private int presupuesto;
     private int NumJugador;
-
+    
+    //Actova la clase jugador asignandole nombre de una vez
     public Jugador(String nombre) {
         this.nombre = nombre;
     }
     
+    //asigna presupuesto a jugador, luego esto debe sumarse al constructor
     public void setPresupuesto(int presupuesto){
-        this.presupuesto = new Presupuesto(presupuesto);
+        this.presupuesto = presupuesto;
     }
 
     public String getNombre() {
@@ -27,5 +29,15 @@ public class Jugador {
 
     public void setNumJugador(int NumJugador) {
         this.NumJugador = NumJugador;
+    }
+    
+    public String comprar(int cantidad, int precio){
+        
+        if (this.presupuesto - (precio * cantidad) >= 0){
+            this.presupuesto -= precio * cantidad;
+            return "Acaba de comprar " + cantidad + " cartones.";
+        }else{
+            return "Dinero insuficiente.";
+        }
     }
 }

@@ -6,6 +6,7 @@ public class Carton {
     private String Disponibilidad;
     private String Estatus;
     
+    //inicio del objeto carton con las bolas previamente creadas
     public Carton(char identificacion, Bolas numerosCarton){
         this.identificacion = identificacion;
         this.Disponibilidad = "Disponible";
@@ -19,6 +20,7 @@ public class Carton {
             }
             numerosCarton.setAux(numerosCarton.getAux() + 15);
         }
+        numerosCarton.ReiniciarBolas();
     }
 
     public Bola[][] getCarton() {
@@ -53,6 +55,7 @@ public class Carton {
         this.Disponibilidad = "No disponible";
     }
     
+    //imprime un carton normalmente
     public void ImprimirCarton(){
         System.out.println("Carton: " + identificacion);
         System.out.println("B    I    N    G    O");
@@ -73,6 +76,7 @@ public class Carton {
         System.out.println("");
     }
     
+    //imprime cart[on ganador
     public void ImprimirCarton2(){
         System.out.println("Carton: " + identificacion);
         System.out.println("B    I    N    G    O");

@@ -1,9 +1,12 @@
 package bingo;
 
+//en esta clase se revisaran cuales cartones han ganado
 public class Marcador {
     
-    public boolean Linea(Carton carton){
-        int aux = 0;
+    public String Linea(Carton carton){
+        int aux;
+        
+        //revisa todos los posibles match de lineas horizontales
         for (int i=0;i<=4;i++){
             aux = 0;
             for (int j=0;j<=4;j++){
@@ -12,12 +15,14 @@ public class Marcador {
                 }
                 if (aux == 5){
                     carton.setGanador();
-                    return true;
+                    System.out.println("gano con horizontal");
+                    return "Ganador";
                 }
             }
             
         }
         
+        //revisa todos los posibles match de lineas verticales
         for (int j=0;j<=4;j++){
             aux = 0;
             for (int i=0;i<=4;i++){
@@ -27,10 +32,13 @@ public class Marcador {
                 }
                 if (aux == 5){
                     carton.setGanador();
-                    return true;
+                    System.out.println("gano con vertical");
+                    return "Ganador";
                 }
             }
         }
+        
+        //revisa todos los posibles match diagonales de izquierda a derecha
         aux = 0;
         for (int i=0;i<=4;i++){
             if((i == 2) || carton.getCarton()[i][i].getEstado().equals("No disponible")){
@@ -38,9 +46,12 @@ public class Marcador {
                 }
             if (aux == 5){
                 carton.setGanador();
-                return true;
+                System.out.println("gano con diagonal de izquierda a derecha");
+                return "Ganador";
             }
         }
+        
+        //revisa todos los posibles matchs de derecha a izquierda
         aux = 0;
         for (int i=0;i<=4;i++){
             if((i == 2) || carton.getCarton()[i][4-i].getEstado().equals("No disponible")){
@@ -48,14 +59,16 @@ public class Marcador {
             }
             if (aux == 5){
                 carton.setGanador();
-                return true;
+                System.out.println("gano con diagonal de derecha a izquierda");
+                return "Ganador";
             }
         }
         
-        return false;
+        return "Perdedor";
     }
     
-    public boolean Completo(Carton carton){
+    //revisa si el carton ha sido llenado
+    public String Completo(Carton carton){
         int aux = 0;
         for (int i=0;i<=4;i++){
             for (int j=0;j<=4;j++){
@@ -66,9 +79,9 @@ public class Marcador {
         }
         if (aux == 25){
             carton.setGanador();
-            return true;
+            return "Ganador";
         }
         
-        return false;
+        return "Perdedor";
     }
 }

@@ -1,13 +1,14 @@
 package bingo;
 
 import java.util.Random;
-
+//se encarga de controlar las bolas del juego 75 en total
 public class Bolas {
     
     private final Bola[] Bolas = new Bola[75];
-    private int rango;
-    private int aux;
+    private int rango; //rango del random del metodo sacar bola
+    private int aux; //modificador del rando sacar bola
     
+    //activador de cada objeto del tipo bola
     public Bolas (){
         for(int i=0;i<=74;i++){
             Bolas[i] = new Bola(i+1);
@@ -30,6 +31,7 @@ public class Bolas {
         return rango;
     }
     
+    //escoge de manera random el objeto bola a jugar
     public Bola SacarBola(){
         Random rand = new Random();
         int bola;
