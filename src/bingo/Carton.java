@@ -23,6 +23,8 @@ public class Carton {
         numerosCarton.ReiniciarBolas();
     }
 
+   
+
     public Bola[][] getCarton() {
         return carton;
     }
@@ -74,6 +76,10 @@ public class Carton {
         System.out.println("");
         System.out.println("");
         System.out.println("");
+    }
+    public int ImprimirUI(int i,int j){
+    return carton[i][j].getBola();
+    
     }
     
     //imprime cart[on ganador

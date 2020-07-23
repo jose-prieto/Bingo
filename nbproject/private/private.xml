@@ -3,17 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Controles.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Carton.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Marcador.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Cartones.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Bingo.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Bolas.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Presupuesto.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Controlador.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Jugador.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/Bola.java</file>
-            <file>file:/C:/Users/jap25/Documents/git%20Projects/Bingo/src/bingo/EstiloJuego.java</file>
+            <file>file:/D:/Proyectos/Bingo-master/src/Interfaz/mainUI.java</file>
+            <file>file:/D:/Proyectos/Bingo-master/src/Interfaz/Lobby.java</file>
+            <file>file:/D:/Proyectos/Bingo-master/src/bingo/Cartones.java</file>
+            <file>file:/D:/Proyectos/Bingo-master/src/conexion/conexion.java</file>
+            <file>file:/D:/Proyectos/Bingo-master/src/bingo/Controlador.java</file>
+            <file>file:/D:/Proyectos/Bingo-master/src/bingo/Carton.java</file>
         </group>
     </open-files>
 </project-private>
