@@ -25,7 +25,9 @@ public class Controles {
             }
         }while(cartones.RevisarCartones() == false);
     }
-    
+    public Cartones getCartones(){
+        return cartones;
+    }
     //para reestablecer cartones
     public void NuevosCartones(){
         this.cartones = new Cartones(bolas);
