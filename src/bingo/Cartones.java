@@ -22,6 +22,10 @@ public class Cartones {
             }while (aux == 0);
         }
     }
+
+    public Carton[] getCartones() {
+        return cartones;
+    }
     
     //para obtener un carton usando su nombre
     public Carton getCarton(char nombre){
@@ -32,9 +36,14 @@ public class Cartones {
         
         return this.cartones[aux];
     }
+     public void SetCarton(char carton1, char carton2){
+        cartonPersona[0][0]=getCarton(carton1);
+        cartonPersona[1][0]=getCarton(carton2);
+    }
+    
     
     //asigna cartones de manera manual mientras se crea interfaz de algun menu
-    public void AsignaCarton(int jugador){
+   /* public void AsignaCarton(int jugador){
         cartonPersona[0][0] = getCarton('Z');
         cartonPersona[1][0] = getCarton('A');
         cartonPersona[0][1] = getCarton('B');
@@ -43,7 +52,7 @@ public class Cartones {
         cartonPersona[1][2] = getCarton('H');
         cartonPersona[0][3] = getCarton('J');
         cartonPersona[1][3] = getCarton('T');
-    }
+    }*/
     
     //imprime todos los cartones
     public void ImprimirCartones(){
@@ -65,4 +74,5 @@ public class Cartones {
         }
         return aux;
     }
+
 }
