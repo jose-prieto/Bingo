@@ -181,8 +181,6 @@ public class Controlador {
     }
     public void MostrarCartonUser(char a,char b){ //muestra el carton principal
         Carton CT = controles.cartones.getCarton(a);
-        System.out.println(a);
-        System.out.println(b);
         B1.setText(Integer.toString(CT.ImprimirUI(0, 0)));
         B2.setText(Integer.toString(CT.ImprimirUI(0, 1)));
         B3.setText(Integer.toString(CT.ImprimirUI(0, 2)));

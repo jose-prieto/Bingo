@@ -39,49 +39,6 @@ int contador,num1,num2;
         
     }   
     
-    public char transformacion (int x){
-    String a="1";
-        System.out.println((char)x);
-        switch (x){
-            case 0: a="AA"; 
-            case 1: a="BB"; 
-            case 2: a="CC"; 
-            case 3: a="DD"; 
-            case 4: a="EE"; 
-            case 5: a="FF"; 
-            case 6: a="GG"; 
-            case 7: a="HH"; 
-            case 8: a="II"; 
-            case 9: a="JJ"; 
-            case 10: a="KK"; 
-            case 11: a="LL"; 
-            case 12: a="MM"; 
-            case 13: a="NN"; 
-            case 14: a="OO"; 
-            case 15: a="PP"; 
-            case 16: a="QQ"; 
-            case 17: a="RR"; 
-            case 18: a="SS"; 
-            case 19: a="TT"; 
-            case 20: a="UU"; 
-            case 21: a="VV"; 
-            case 22: a="WW"; 
-            case 23: a="XX"; 
-            case 24: a="YY"; 
-            case 25: a="ZZ"; 
-        };
-    return a.charAt(0);
-    
-    
-    }
-    public void cambioSelect(int x){
-         
-        controler.seleccionCarton(transformacion(x));   
-    
-    
-    
-    
-    }
 
 
     /**
@@ -1606,7 +1563,7 @@ int contador,num1,num2;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26" }));
+        Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" }));
         Select.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 SelectItemStateChanged(evt);
@@ -1813,12 +1770,10 @@ int contador,num1,num2;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        
+       contador =0; 
        jPanel2.setVisible(false);
        jPanel3.setVisible(true);
-        
-        
-        System.out.println(nb);
+       
    
     
     
@@ -1827,7 +1782,7 @@ int contador,num1,num2;
 
     private void SelectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SelectItemStateChanged
       
-        cambioSelect(Select.getSelectedIndex());
+        controler.seleccionCarton((char)(Select.getSelectedIndex()+65));
     }//GEN-LAST:event_SelectItemStateChanged
 
     
@@ -1839,9 +1794,9 @@ int contador,num1,num2;
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         if (contador ==0){
             num1 = Select.getSelectedIndex()+65;
-            jLabel5.setText(Integer.toString(Select.getSelectedIndex()+1));
+            jLabel5.setText(String.valueOf((char)(Select.getSelectedIndex()+65)));
         } else {num2 = Select.getSelectedIndex()+65;
-            jLabel6.setText(Integer.toString(Select.getSelectedIndex()+1));
+            jLabel6.setText(String.valueOf((char)(Select.getSelectedIndex()+65)));
             controler.MostrarCartonUser((char)num2, (char)num1);
             jPanel2.setVisible(true);
             jPanel3.setVisible(false);
