@@ -163,10 +163,10 @@ public class Controlador {
     }
         
     public void Controlar(char a,char b) {
-        MostrarCartonUser(a,b);
         if (controles.Juego(bola)){
             System.out.println("Victoria");
         }
+        MostrarCartonUser(a,b);
     }
     
     /* version ernesto
@@ -182,138 +182,61 @@ public class Controlador {
     }
     
     
-    public void MostrarCartonUser(char a,char b){ //muestra el carton principal
+    public void MostrarCartonUser(char b,char a){ //muestra el carton principal
+        JLabel[] Carton1 = {B1,B2,B3,B4,B5,I1,I2,I3,I4,I5,N1,N2,N4,N5,G1,G2,G3,G4,G5,O1,O2,O3,O4,O5};
+        JLabel[] Carton1X = {XB1,XB2,XB3,XB4,XB5,XI1,XI2,XI3,XI4,XI5,XN1,XN2,XN4,XN5,XG1,XG2,XG3,XG4,XG5,XO1,XO2,XO3,XO4,XO5};
+        JLabel[] Carton2 = {c2B1,c2B2,c2B3,c2B4,c2B5,c2I1,c2I2,c2I3,c2I4,c2I5,c2N1,c2N2,c2N4,c2N5,c2G1,c2G2,c2G3,c2G4,c2G5,c2O1,c2O2,c2O3,c2O4,c2O5};
+        JLabel[] Carton2X = {c2XB1,c2XB2,c2XB3,c2XB4,c2XB5,c2XI1,c2XI2,c2XI3,c2XI4,c2XI5,c2XN1,c2XN2,c2XN4,c2XN5,c2XG1,c2XG2,c2XG3,c2XG4,c2XG5,c2XO1,c2XO2,c2XO3,c2XO4,c2XO5};
+        int aux = 0;
+        
         Carton CT = controles.cartones.getCarton(a);
-        System.out.println(a);
-        System.out.println(b);
-        B1.setText(Integer.toString(CT.ImprimirUI(0, 0)));
-        B2.setText(Integer.toString(CT.ImprimirUI(1, 0)));
-        B3.setText(Integer.toString(CT.ImprimirUI(2, 0)));
-        B4.setText(Integer.toString(CT.ImprimirUI(3, 0)));
-        B5.setText(Integer.toString(CT.ImprimirUI(4, 0)));
-        I1.setText(Integer.toString(CT.ImprimirUI(0, 1)));
-        I2.setText(Integer.toString(CT.ImprimirUI(1, 1)));
-        I3.setText(Integer.toString(CT.ImprimirUI(2, 1)));
-        I4.setText(Integer.toString(CT.ImprimirUI(3, 1)));
-        I5.setText(Integer.toString(CT.ImprimirUI(4, 1)));
-        N1.setText(Integer.toString(CT.ImprimirUI(0, 2)));
-        N2.setText(Integer.toString(CT.ImprimirUI(1, 2)));
-        N4.setText(Integer.toString(CT.ImprimirUI(3, 2)));
-        N5.setText(Integer.toString(CT.ImprimirUI(4, 2)));
-        G1.setText(Integer.toString(CT.ImprimirUI(0, 3)));
-        G2.setText(Integer.toString(CT.ImprimirUI(1, 3)));
-        G3.setText(Integer.toString(CT.ImprimirUI(2, 3)));
-        G4.setText(Integer.toString(CT.ImprimirUI(3, 3)));
-        G5.setText(Integer.toString(CT.ImprimirUI(4, 3)));
-        O1.setText(Integer.toString(CT.ImprimirUI(0, 4)));
-        O2.setText(Integer.toString(CT.ImprimirUI(1, 4)));
-        O3.setText(Integer.toString(CT.ImprimirUI(2, 4)));
-        O4.setText(Integer.toString(CT.ImprimirUI(3, 4)));
-        O5.setText(Integer.toString(CT.ImprimirUI(4, 4)));
-        XB1.setVisible(false);
-        XB2.setVisible(false);
-        XB3.setVisible(false);
-        XB4.setVisible(false);
-        XB5.setVisible(false);
-        XI1.setVisible(false);
-        XI2.setVisible(false);
-        XI3.setVisible(false);
-        XI4.setVisible(false);
-        XI5.setVisible(false);
-        XN1.setVisible(false);
-        XN2.setVisible(false);
-        XN4.setVisible(false);
-        XN5.setVisible(false);
-        XG1.setVisible(false);
-        XG2.setVisible(false);
-        XG3.setVisible(false);
-        XG4.setVisible(false);
-        XG5.setVisible(false);
-        XO1.setVisible(false);
-        XO2.setVisible(false);
-        XO3.setVisible(false);
-        XO4.setVisible(false);
-        XO5.setVisible(false);
         
-        Carton CTT = controles.cartones.getCarton(b);
-        c2B1.setText(Integer.toString(CTT.ImprimirUI(0, 0)));
-        c2B2.setText(Integer.toString(CTT.ImprimirUI(1, 0)));
-        c2B3.setText(Integer.toString(CTT.ImprimirUI(2, 0)));
-        c2B4.setText(Integer.toString(CTT.ImprimirUI(3, 0)));
-        c2B5.setText(Integer.toString(CTT.ImprimirUI(4, 0)));
-        c2I1.setText(Integer.toString(CTT.ImprimirUI(0, 1)));
-        c2I2.setText(Integer.toString(CTT.ImprimirUI(1, 1)));
-        c2I3.setText(Integer.toString(CTT.ImprimirUI(2, 1)));
-        c2I4.setText(Integer.toString(CTT.ImprimirUI(3, 1)));
-        c2I5.setText(Integer.toString(CTT.ImprimirUI(4, 1)));
-        c2N1.setText(Integer.toString(CTT.ImprimirUI(0, 2)));
-        c2N2.setText(Integer.toString(CTT.ImprimirUI(1, 2)));
-        c2N4.setText(Integer.toString(CTT.ImprimirUI(3, 2)));
-        c2N5.setText(Integer.toString(CTT.ImprimirUI(4, 2)));
-        c2G1.setText(Integer.toString(CTT.ImprimirUI(0, 3)));
-        c2G2.setText(Integer.toString(CTT.ImprimirUI(1, 3)));
-        c2G3.setText(Integer.toString(CTT.ImprimirUI(2, 3)));
-        c2G4.setText(Integer.toString(CTT.ImprimirUI(3, 3)));
-        c2G5.setText(Integer.toString(CTT.ImprimirUI(4, 3)));
-        c2O1.setText(Integer.toString(CTT.ImprimirUI(0, 4)));
-        c2O2.setText(Integer.toString(CTT.ImprimirUI(1, 4)));
-        c2O3.setText(Integer.toString(CTT.ImprimirUI(2, 4)));
-        c2O4.setText(Integer.toString(CTT.ImprimirUI(3, 4)));
-        c2O5.setText(Integer.toString(CTT.ImprimirUI(4, 4)));
-        c2XB1.setVisible(false);
-        c2XB2.setVisible(false);
-        c2XB3.setVisible(false);
-        c2XB4.setVisible(false);
-        c2XB5.setVisible(false);
-        c2XI1.setVisible(false);
-        c2XI2.setVisible(false);
-        c2XI3.setVisible(false);
-        c2XI4.setVisible(false);
-        c2XI5.setVisible(false);
-        c2XN1.setVisible(false);
-        c2XN2.setVisible(false);
-        c2XN4.setVisible(false);
-        c2XN5.setVisible(false);
-        c2XG1.setVisible(false);
-        c2XG2.setVisible(false);
-        c2XG3.setVisible(false);
-        c2XG4.setVisible(false);
-        c2XG5.setVisible(false);
-        c2XO1.setVisible(false);
-        c2XO2.setVisible(false);
-        c2XO3.setVisible(false);
-        c2XO4.setVisible(false);
-        c2XO5.setVisible(false);
+        for (int j = 0; j <= 4; j++){
+            for (int i = 0; i <= 4; i++){
+                if (!(i == 2 && j == 2)){
+                    if (CT.getCarton()[i][j].getEstado().equals("Disponible")){
+                        Carton1[aux].setText(Integer.toString(CT.ImprimirUI(i, j)));
+                        Carton1X[aux].setVisible(false);
+                    }else{
+                        Carton1[aux].setText(Integer.toString(CT.ImprimirUI(i, j)));
+                        Carton1X[aux].setVisible(true);
+                    }
+                    aux++;
+                }
+            }
+        }
         
+        aux = 0;
+        CT = controles.cartones.getCarton(b);
         
+        for (int j = 0; j <= 4; j++){
+            for (int i = 0; i <= 4; i++){
+                if (!(i == 2 && j == 2)){
+                    if (CT.getCarton()[i][j].getEstado().equals("Disponible")){
+                        Carton2[aux].setText(Integer.toString(CT.ImprimirUI(i, j)));
+                        Carton2X[aux].setVisible(false);
+                    }else{
+                        Carton2[aux].setText(Integer.toString(CT.ImprimirUI(i, j)));
+                        Carton2X[aux].setVisible(true);
+                    }
+                    aux++;
+                }
+            }
+        }
     }
     
     public void seleccionCarton(char n){
+        int aux = 0;
+        JLabel[] CartonConf = {sB1,sB2,sB3,sB4,sB5,sI1,sI2,sI3,sI4,sI5,sN1,sN2,sN4,sN5,sG1,sG2,sG3,sG4,sG5,sO1,sO2,sO3,sO4,sO5};
         
-    Carton aa = controles.cartones.getCarton(n);
-        sB1.setText(Integer.toString(aa.ImprimirUI(0, 0)));
-        sB2.setText(Integer.toString(aa.ImprimirUI(1, 0)));
-        sB3.setText(Integer.toString(aa.ImprimirUI(2, 0)));
-        sB4.setText(Integer.toString(aa.ImprimirUI(3, 0)));
-        sB5.setText(Integer.toString(aa.ImprimirUI(4, 0)));
-        sI1.setText(Integer.toString(aa.ImprimirUI(0, 1)));
-        sI2.setText(Integer.toString(aa.ImprimirUI(1, 1)));
-        sI3.setText(Integer.toString(aa.ImprimirUI(2, 1)));
-        sI4.setText(Integer.toString(aa.ImprimirUI(3, 1)));
-        sI5.setText(Integer.toString(aa.ImprimirUI(4, 1)));
-        sN1.setText(Integer.toString(aa.ImprimirUI(0, 2)));
-        sN2.setText(Integer.toString(aa.ImprimirUI(1, 2)));
-        sN4.setText(Integer.toString(aa.ImprimirUI(3, 2)));
-        sN5.setText(Integer.toString(aa.ImprimirUI(4, 2)));
-        sG1.setText(Integer.toString(aa.ImprimirUI(0, 3)));
-        sG2.setText(Integer.toString(aa.ImprimirUI(1, 3)));
-        sG3.setText(Integer.toString(aa.ImprimirUI(2, 3)));
-        sG4.setText(Integer.toString(aa.ImprimirUI(3, 3)));
-        sG5.setText(Integer.toString(aa.ImprimirUI(4, 3)));
-        sO1.setText(Integer.toString(aa.ImprimirUI(0, 4)));
-        sO2.setText(Integer.toString(aa.ImprimirUI(1, 4)));
-        sO3.setText(Integer.toString(aa.ImprimirUI(2, 4)));
-        sO4.setText(Integer.toString(aa.ImprimirUI(3, 4)));
-        sO5.setText(Integer.toString(aa.ImprimirUI(4, 4)));
+        Carton aa = controles.cartones.getCarton(n);
+        for (int j = 0; j <= 4; j++){
+            for (int i = 0; i <= 4; i++){
+                if (!(i == 2 && j == 2)){
+                    CartonConf[aux].setText(Integer.toString(aa.ImprimirUI(i, j)));
+                    aux++;
+                }
+            }
+        }
     }
 }
