@@ -78,7 +78,7 @@ public class Carton {
         System.out.println("");
     }
     public int ImprimirUI(int i,int j){
-    return carton[i][j].getBola();
+        return carton[i][j].getBola();
     
     }
     
