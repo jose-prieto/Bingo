@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Proyectos/Bingo-master/src/Interfaz/mainUI.java</file>
-            <file>file:/D:/Proyectos/Bingo-master/src/Interfaz/Lobby.java</file>
-            <file>file:/D:/Proyectos/Bingo-master/src/bingo/Cartones.java</file>
-            <file>file:/D:/Proyectos/Bingo-master/src/conexion/conexion.java</file>
-            <file>file:/D:/Proyectos/Bingo-master/src/bingo/Controlador.java</file>
-            <file>file:/D:/Proyectos/Bingo-master/src/bingo/Carton.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/conexion/Traducción.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Bolas.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Marcador.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/Interfaz/Lobby.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/UIControl.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Controles.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Cartones.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Bola.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Carton.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Bingo.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/Controlador.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/Interfaz/mainUI.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/conexion/conexion.java</file>
+            <file>file:/C:/Users/jap25/Google%20Drive/Universidad/6to%20Semestre/Redes%20de%20Computadores%201%20(Prácticas)/Bingo/src/bingo/EstiloJuego.java</file>
         </group>
     </open-files>
 </project-private>
