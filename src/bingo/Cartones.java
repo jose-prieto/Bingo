@@ -45,8 +45,10 @@ public class Cartones {
         boolean aux = false;
         for (int i=0;i<=25;i++){
             if(cartones[i].getDisponibilidad().equals("No disponible")){
-                cartones[i].setGanador();
-                aux = true;
+                if (marcador.Linea(cartones[i]).equals("Ganador")){
+                    cartones[i].setGanador();
+                    aux = true;
+                }
             }
         }
         return aux;

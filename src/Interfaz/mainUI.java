@@ -1870,12 +1870,8 @@ int contador,num1,num2;
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
        contador =0; 
        jPanel2.setVisible(false);
+       controler.seleccionCarton((char)(Select.getSelectedIndex()+65));
        jTabbedPane1.setVisible(true);
-       
-   
-    
-    
-        
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void SelectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SelectItemStateChanged

@@ -163,24 +163,20 @@ public class Controlador {
     }
         
     public void Controlar(char a,char b) {
+        Carton CT = controles.cartones.getCarton(a);
+        Carton CTT = controles.cartones.getCarton(b);
+        CT.setNoDisponible();
+        CTT.setNoDisponible();
+        
         if (controles.Juego(bola)){
             System.out.println("Victoria");
         }
-        MostrarCartonUser(a,b);
+        MostrarCartonUser(b,a);
     }
     
-    /* version ernesto
-    public void CrearUser(char a, char b){
-        jugador[0] = new Jugador("Player 1");
-        jugador[0].setPresupuesto(1000);
-        controles.cartones.SetCarton(a,b);
-    }
-    
-    */
     public Cartones DevCarton(){
         return controles.getCartones();
     }
-    
     
     public void MostrarCartonUser(char b,char a){ //muestra el carton principal
         JLabel[] Carton1 = {B1,B2,B3,B4,B5,I1,I2,I3,I4,I5,N1,N2,N4,N5,G1,G2,G3,G4,G5,O1,O2,O3,O4,O5};
@@ -207,16 +203,16 @@ public class Controlador {
         }
         
         aux = 0;
-        CT = controles.cartones.getCarton(b);
+        Carton CTT = controles.cartones.getCarton(b);
         
         for (int j = 0; j <= 4; j++){
             for (int i = 0; i <= 4; i++){
                 if (!(i == 2 && j == 2)){
-                    if (CT.getCarton()[i][j].getEstado().equals("Disponible")){
-                        Carton2[aux].setText(Integer.toString(CT.ImprimirUI(i, j)));
+                    if (CTT.getCarton()[i][j].getEstado().equals("Disponible")){
+                        Carton2[aux].setText(Integer.toString(CTT.ImprimirUI(i, j)));
                         Carton2X[aux].setVisible(false);
                     }else{
-                        Carton2[aux].setText(Integer.toString(CT.ImprimirUI(i, j)));
+                        Carton2[aux].setText(Integer.toString(CTT.ImprimirUI(i, j)));
                         Carton2X[aux].setVisible(true);
                     }
                     aux++;
