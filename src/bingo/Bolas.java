@@ -20,6 +20,11 @@ public class Bolas {
         }
     }
 
+    public Bola[] getBolas() {
+        return Bolas;
+    }
+    
+
     public int getAux() {
         return aux;
     }
@@ -35,6 +40,10 @@ public class Bolas {
     public int getRango() {
         return rango;
     }
+    public String getEstadoBola(int i) {
+        return Bolas[i].getEstado();
+    }
+    
     
     //escoge de manera random el objeto bola a jugar
     public Bola SacarBola(JLabel B) {
