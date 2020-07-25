@@ -167,7 +167,63 @@ public class Controlador {
         if (controles.Juego(bola)){
             System.out.println("Victoria");
         }
+        CheckCarton1(a);
+        CheckCarton2(b);
+    
     }
+    public void CheckCarton1(char A){
+    
+ 
+    Carton CT = controles.cartones.getCarton(A);
+    Bolas ss = controles.getBolas();
+    
+    for (int j=0;j<=4;j++){
+        for (int k=0;k<=4;k++){
+        for (int i=0;i<=74;i++){
+            if((ss.getEstadoBola(i).equals("No disponible"))&&(i==CT.ImprimirUI(k,j))){
+                 MarcarXC1(k,j);
+        
+        }
+    
+    
+    }
+    
+    }
+    
+    
+    }
+    
+    
+    
+    }
+    
+    
+    
+     public void CheckCarton2(char A){
+     
+         
+    Carton CT = controles.cartones.getCarton(A);
+    Bolas ss = controles.getBolas();
+    
+    for (int j=0;j<=4;j++){
+        for (int k=0;k<=4;k++){
+        for (int i=0;i<=74;i++){
+            if((ss.getEstadoBola(i).equals("No disponible"))&&(i==CT.ImprimirUI(k,j))){
+                 MarcarXC2(k,j);
+        
+        }
+    
+    
+    }
+    
+    }
+    
+    
+    }
+    
+    }
+     
+     
     
     /* version ernesto
     public void CrearUser(char a, char b){
@@ -180,6 +236,67 @@ public class Controlador {
     public Cartones DevCarton(){
         return controles.getCartones();
     }
+    
+    public void MarcarXC2(int a,int b){
+       if (a==0&&b==0){XB1.setVisible(true);}
+       if (a==1&&b==0){XB2.setVisible(true);}
+       if (a==2&&b==0){XB3.setVisible(true);}
+       if (a==3&&b==0){XB4.setVisible(true);}
+       if (a==4&&b==0){XB5.setVisible(true);}
+       if (a==0&&b==1){XI1.setVisible(true);}
+       if (a==1&&b==1){XI2.setVisible(true);}
+       if (a==2&&b==1){XI3.setVisible(true);}
+       if (a==3&&b==1){XI4.setVisible(true);}
+       if (a==4&&b==1){XI5.setVisible(true);}
+       if (a==0&&b==2){XN1.setVisible(true);}
+       if (a==1&&b==2){XN2.setVisible(true);}
+       if (a==3&&b==2){XN4.setVisible(true);}
+       if (a==4&&b==2){XN5.setVisible(true);}
+       if (a==0&&b==3){XG1.setVisible(true);}
+       if (a==1&&b==3){XG2.setVisible(true);}
+       if (a==2&&b==3){XG3.setVisible(true);}
+       if (a==3&&b==3){XG4.setVisible(true);}
+       if (a==4&&b==3){XG5.setVisible(true);}
+       if (a==0&&b==4){XO1.setVisible(true);}
+       if (a==1&&b==4){XO2.setVisible(true);}
+       if (a==2&&b==4){XO3.setVisible(true);}
+       if (a==3&&b==4){XO4.setVisible(true);}
+       if (a==4&&b==4){XO5.setVisible(true);}
+    
+    
+    
+    }
+    
+    public void MarcarXC1(int a,int b){
+       if (a==0&&b==0){c2XB1.setVisible(true);}
+       if (a==1&&b==0){c2XB2.setVisible(true);}
+       if (a==2&&b==0){c2XB3.setVisible(true);}
+       if (a==3&&b==0){c2XB4.setVisible(true);}
+       if (a==4&&b==0){c2XB5.setVisible(true);}
+       if (a==0&&b==1){c2XI1.setVisible(true);}
+       if (a==1&&b==1){c2XI2.setVisible(true);}
+       if (a==2&&b==1){c2XI3.setVisible(true);}
+       if (a==3&&b==1){c2XI4.setVisible(true);}
+       if (a==4&&b==1){c2XI5.setVisible(true);}
+       if (a==0&&b==2){c2XN1.setVisible(true);}
+       if (a==1&&b==2){c2XN2.setVisible(true);}
+       if (a==3&&b==2){c2XN4.setVisible(true);}
+       if (a==4&&b==2){c2XN5.setVisible(true);}
+       if (a==0&&b==3){c2XG1.setVisible(true);}
+       if (a==1&&b==3){c2XG2.setVisible(true);}
+       if (a==2&&b==3){c2XG3.setVisible(true);}
+       if (a==3&&b==3){c2XG4.setVisible(true);}
+       if (a==4&&b==3){c2XG5.setVisible(true);}
+       if (a==0&&b==4){c2XO1.setVisible(true);}
+       if (a==1&&b==4){c2XO2.setVisible(true);}
+       if (a==2&&b==4){c2XO3.setVisible(true);}
+       if (a==3&&b==4){c2XO4.setVisible(true);}
+       if (a==4&&b==4){c2XO5.setVisible(true);}
+    
+    
+    
+    }
+
     
     
     public void MostrarCartonUser(char a,char b){ //muestra el carton principal

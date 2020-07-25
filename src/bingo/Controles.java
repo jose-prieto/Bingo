@@ -25,4 +25,8 @@ public class Controles {
     public void NuevosCartones(){
         this.cartones = new Cartones(bolas);
     }
+    public Bolas getBolas(){
+    return bolas;
+    }
+
 }
