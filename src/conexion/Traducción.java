@@ -11,17 +11,17 @@ package conexion;
  */
 public class Traducción{
     
-    public int bola(String binario){
-        int bola = Integer.parseInt(binario, 2);
+    public int BinarioDecimal(String binario){
+        int codigo = Integer.parseInt(binario, 2);
         
-        if (bola >= 0 || bola <= 74){
-            return bola++;
+        if (codigo >= 0 || codigo <= 74){
+            return codigo++;
         }else {
-            return -1;
+            return codigo;
         }
     }
     
-    public String Completar(int num){
+    public String DecimalBinario(int num){
         String binario;
         binario = Integer.toBinaryString(num);
         

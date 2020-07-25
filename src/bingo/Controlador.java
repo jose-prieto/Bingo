@@ -164,7 +164,9 @@ public class Controlador {
         
     public void Controlar(char a,char b) {
         MostrarCartonUser(a,b);
-        controles.Juego(bola);
+        if (controles.Juego(bola)){
+            System.out.println("Victoria");
+        }
     }
     
     /* version ernesto
