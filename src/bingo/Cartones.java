@@ -33,18 +33,6 @@ public class Cartones {
         return this.cartones[aux];
     }
     
-    //asigna cartones de manera manual mientras se crea interfaz de algun menu
-    public void AsignaCarton(int jugador){
-        cartonPersona[0][0] = getCarton('Z');
-        cartonPersona[1][0] = getCarton('A');
-        cartonPersona[0][1] = getCarton('B');
-        cartonPersona[1][1] = getCarton('D');
-        cartonPersona[0][2] = getCarton('E');
-        cartonPersona[1][2] = getCarton('H');
-        cartonPersona[0][3] = getCarton('J');
-        cartonPersona[1][3] = getCarton('T');
-    }
-    
     //imprime todos los cartones
     public void ImprimirCartones(){
         for (int i=0;i<=25;i++){
@@ -55,12 +43,10 @@ public class Cartones {
     //revisa si existe algun carton ganador
     public boolean RevisarCartones(){
         boolean aux = false;
-        for (int i=0;i<=1;i++){
-            for (int j=0;j<=1;j++){
-                if(marcador.Linea(cartonPersona[i][j]).equals("Ganador")){
-                    cartonPersona[i][j].setGanador();
-                    aux = true;
-                }
+        for (int i=0;i<=25;i++){
+            if(cartones[i].getDisponibilidad().equals("No disponible")){
+                cartones[i].setGanador();
+                aux = true;
             }
         }
         return aux;

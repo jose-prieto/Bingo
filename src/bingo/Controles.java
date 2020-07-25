@@ -12,18 +12,11 @@ public class Controles {
                                              //los cartones que tengan la bola que salió
     
     //procedimientos necesarior par hacer posible el juego
-    public void Juego(JLabel bola) { 
+    public boolean Juego(JLabel bola) { 
         bolas.setRango(75);
         bolas.setAux(0);
-        do{
-            bolas.SacarBola(bola);
-            
-            try {
-                Thread.sleep(0);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Controles.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }while(cartones.RevisarCartones() == false);
+        bolas.SacarBola(bola);
+        return cartones.RevisarCartones();
     }
     public Cartones getCartones(){
         return cartones;
