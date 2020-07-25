@@ -53,7 +53,7 @@ public class Bolas {
             bola = rand.nextInt(this.rango) + aux;
         }while (this.Bolas[bola].getEstado().equals("No disponible"));
         this.Bolas[bola].setNoDisponible();
-        B.setText(Integer.toString(bola));
+        B.setText(Integer.toString(bola+1));
         
         
         try {
