@@ -314,15 +314,4 @@ public class Controlador {
         sO4.setText(Integer.toString(aa.ImprimirUI(4, 3)));
         sO5.setText(Integer.toString(aa.ImprimirUI(4, 4)));
     }
-    
-    //con esto se sabra cuales son los cartones ganadores y a quien pertenece
-    public void Ganadores(){
-        for (int i=0;i<=1;i++){
-            for (int j=0;j<=3;j++){
-                if(controles.cartones.cartonPersona[i][j].getEstatus().equals("Ganador")){
-                    controles.cartones.cartonPersona[i][j].ImprimirCarton2();
-                }
-            }
-        }
-    }
 }

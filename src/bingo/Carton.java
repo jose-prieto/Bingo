@@ -1,5 +1,7 @@
 package bingo;
 
+import javax.swing.JLabel;
+
 public class Carton {
     private final Bola[][] carton = new Bola[5][5];
     private final char identificacion;
@@ -83,14 +85,18 @@ public class Carton {
     }
     
     //imprime cart[on ganador
-    public void ImprimirCarton2(){
-        System.out.println("Carton: " + identificacion);
-        System.out.println("B    I    N    G    O");
+    /*public void ImprimirCarton2(JLabel carton1){
+        
+        int pos = 0;
+        
         for(int j=0;j<=4;j++){
             for (int i=0;i<=4;i++){
                 if ((i == 2 && j == 2) || carton[j][i].getEstado().equals("No disponible")){
                     System.out.print("XX   ");
-                }else if(carton[j][i].getBola() < 10){
+                }else{
+                    carton[pos].setText(Integer.toString(aa.ImprimirUI(0, 0)));
+                }
+                    else if(carton[j][i].getBola() < 10){
                     System.out.print("0" + carton[j][i].getBola() + "   ");
                 }else if(carton[j][i].getBola() >= 10){
                     System.out.print(carton[j][i].getBola() + "   ");
@@ -101,5 +107,5 @@ public class Carton {
         System.out.println("");
         System.out.println("");
         System.out.println("");
-    }
+    }*/
 }
