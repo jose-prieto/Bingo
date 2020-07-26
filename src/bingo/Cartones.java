@@ -41,15 +41,31 @@ public class Cartones {
     }
     
     //revisa si existe algun carton ganador
-    public boolean RevisarCartones(){
+    public boolean RevisarCartones(String juego){
         boolean aux = false;
         for (int i=0;i<=25;i++){
             if(cartones[i].getDisponibilidad().equals("No disponible")){
-                if (marcador.Linea(cartones[i]).equals("Ganador")){
-                    cartones[i].setGanador();
-                    aux = true;
+                if (juego.equals("Juego de línea")){
+                    if (marcador.Linea(cartones[i]).equals("Ganador")){
+                        cartones[i].setGanador();
+                        aux = true;
+                    }
+                }else{
+                    if (marcador.Completo(cartones[i]).equals("Ganador")){
+                        cartones[i].setGanador();
+                        aux = true;
+                    }
                 }
+                
             }
+        }
+        return aux;
+    }
+    
+    public boolean CartonDisponible(){
+        boolean aux = false;
+        for (int i=0;i<=25;i++){
+            cartones[i].setDisponible();
         }
         return aux;
     }

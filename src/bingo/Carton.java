@@ -83,29 +83,4 @@ public class Carton {
         return carton[i][j].getBola();
     
     }
-    
-    //imprime cart[on ganador
-    /*public void ImprimirCarton2(JLabel carton1){
-        
-        int pos = 0;
-        
-        for(int j=0;j<=4;j++){
-            for (int i=0;i<=4;i++){
-                if ((i == 2 && j == 2) || carton[j][i].getEstado().equals("No disponible")){
-                    System.out.print("XX   ");
-                }else{
-                    carton[pos].setText(Integer.toString(aa.ImprimirUI(0, 0)));
-                }
-                    else if(carton[j][i].getBola() < 10){
-                    System.out.print("0" + carton[j][i].getBola() + "   ");
-                }else if(carton[j][i].getBola() >= 10){
-                    System.out.print(carton[j][i].getBola() + "   ");
-                }
-            }
-            System.out.println("");
-        }
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-    }*/
 }
