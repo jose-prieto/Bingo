@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 package Interfaz;
+import bingo.Carton;
 import conexion.conexion;
 import bingo.Controlador;
+import javax.swing.JDialog;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -17,7 +20,10 @@ import javax.swing.JLabel;
 public class mainUI extends javax.swing.JFrame {
 int na,nb=-1;
 Controlador controler;
-int contador,num1,num2;
+int contador;
+int num1 = -1;
+int num2 = -1;
+
 //tengo un peo arrecho
     JLabel sB1,sB2,sB3,sB4,sB5;
     JLabel sI1,sI2,sI3,sI4,sI5;
@@ -33,7 +39,6 @@ int contador,num1,num2;
         Controlador control = new Controlador(Bola,numB1,numB2,numB3,numB4,numB5,numI1,numI2,numI3,numI4,numI5,numN1,numN2,numN4,numN5,numG1,numG2,numG3,numG4,numG5,numO1,numO2,numO3,numO4,numO5,xB1,xB2,xB3,xB4,xB5,xI1,xI2,xI3,xI4,xI5,xN1,xN2,xN4,xN5,xG1,xG2,xG3,xG4,xG5,xO1,xO2,xO3,xO4,xO5,numB11,numB12,numB13,numB14,numB15,numI11,numI12,numI13,numI14,numI15,numN7,numN8,numN9,numN10,numG6,numG7,numG8,numG9,numG10,numO6,numO7,numO8,numO9,numO10,xB11,xB12,xB13,xB14,xB15,xI11,xI12,xI13,xI14,xI15,xN7,xN8,xN9,xN10,xG6,xG7,xG8,xG9,xG10,xO6,xO7,xO8,xO9,xO10,numSB1,numSB2,numSB3,numSB4,numSB5,numSI1,numSI2,numSI3,numSI4,numSI5,numSN1,numSN2,numSN4,numSN5,numSG1,numSG2,numSG3,numSG4,numSG5,numSO1,numSO2,numSO3,numSO4,numSO5);
         this.controler = control;
         if (controler==null){System.out.println("A");}
-        if (control==null){System.out.println("AAA");}
     }
     private void SelectMouseClicked(java.awt.event.MouseEvent evt) {                                    
         
@@ -217,6 +222,7 @@ int contador,num1,num2;
         xO10 = new javax.swing.JLabel();
         numO10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        EstiloJuego = new javax.swing.JComboBox<>();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         carton1 = new javax.swing.JPanel();
@@ -284,7 +290,7 @@ int contador,num1,num2;
         jPanel5 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -1184,33 +1190,41 @@ int contador,num1,num2;
             }
         });
 
+        EstiloJuego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juego de línea", "Juego de cartón lleno" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(carton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(Bola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1)
+                        .addComponent(EstiloJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 474, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(Play)))
-                .addGap(24, 24, 24)
-                .addComponent(carton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(carton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(Bola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton1)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(Play))
+                            .addComponent(jLabel1))
+                        .addGap(24, 24, 24)
+                        .addComponent(carton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addComponent(EstiloJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(carton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(carton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1616,7 +1630,7 @@ int contador,num1,num2;
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1635,11 +1649,6 @@ int contador,num1,num2;
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jButton2.setText("Siguiente");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -1665,7 +1674,7 @@ int contador,num1,num2;
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setText("Seleccione Carton 00");
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir cartón 1", "Elegir cartón 2" }));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1673,14 +1682,14 @@ int contador,num1,num2;
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
+                .addGap(7, 7, 7)
+                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1763,7 +1772,7 @@ int contador,num1,num2;
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(jButton3)))
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1858,24 +1867,49 @@ int contador,num1,num2;
 
     private void PlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PlayMouseClicked
         
-        
-        
-        controler.Controlar((char)num1,(char)num2);
+        if (num1 != -1 || num2 != -1){
+            EstiloJuego.setEnabled(false);
+            controler.Controlar((char)num1,(char)num2, EstiloJuego.getSelectedItem().toString());
+            jButton1.setEnabled(false);
+        }
     }//GEN-LAST:event_PlayMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     
+        controler.seleccionCarton((char)(Select.getSelectedIndex()+65));
+        jPanel2.setVisible(false);
+        jTabbedPane1.setVisible(true);
+        jButton2.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-       contador =0; 
-       jPanel2.setVisible(false);
-       controler.seleccionCarton((char)(Select.getSelectedIndex()+65));
-       jTabbedPane1.setVisible(true);
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void SelectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SelectItemStateChanged
-      
+        JOptionPane optionPane = new JOptionPane("Cartón ya seleccionado",JOptionPane.WARNING_MESSAGE);
+        JDialog dialog = optionPane.createDialog("Warning!");
+        dialog.setAlwaysOnTop(true);
+        
+        if (jComboBox4.getSelectedIndex() == 0){
+            if (Select.getSelectedIndex()+65 != num2){
+                jLabel5.setText(String.valueOf((char)(Select.getSelectedIndex()+65)));
+                num1 = Select.getSelectedIndex()+65;
+            }else {
+                dialog.setVisible(true);
+            }
+        } else {
+            if (num1 != Select.getSelectedIndex()+65){
+                jLabel6.setText(String.valueOf((char)(Select.getSelectedIndex()+65)));
+                num2 = Select.getSelectedIndex()+65;
+            }else {
+                dialog.setVisible(true);
+            }
+            //aqui pegas para que se haga visible la ventana de conexion
+        }
+        
+        if (num1 != -1 && num2 != -1){
+            jButton2.setEnabled(true);
+        }
         controler.seleccionCarton((char)(Select.getSelectedIndex()+65));
     }//GEN-LAST:event_SelectItemStateChanged
 
@@ -1885,24 +1919,12 @@ int contador,num1,num2;
         // TODO add your handling code here:
     }//GEN-LAST:event_SelectActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        if (contador ==0){
-            num1 = Select.getSelectedIndex()+65;
-            jLabel5.setText(String.valueOf((char)(Select.getSelectedIndex()+65)));
-        } else {num2 = Select.getSelectedIndex()+65;
-            jLabel6.setText(String.valueOf((char)(Select.getSelectedIndex()+65)));
-            controler.MostrarCartonUser((char)num2, (char)num1);
-            jPanel2.setVisible(true);
-            jTabbedPane1.setVisible(false);
-            //aqui pegas para que se haga visible la ventana de conexion
-        }
-        contador++;
-        
-        
-    }//GEN-LAST:event_jButton2MouseClicked
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        EstiloJuego.setEnabled(true);
+        controler.MostrarCartonUser((char)num2, (char)num1);
+        jPanel2.setVisible(true);
+        jTabbedPane1.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1977,6 +1999,7 @@ int contador,num1,num2;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bola;
+    private javax.swing.JComboBox<String> EstiloJuego;
     private javax.swing.JLabel Play;
     private javax.swing.JComboBox<String> Select;
     private javax.swing.JLabel X;
@@ -2045,12 +2068,12 @@ int contador,num1,num2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
