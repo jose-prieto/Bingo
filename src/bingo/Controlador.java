@@ -159,6 +159,19 @@ public class Controlador {
         MostrarCartonUser(b,a);
     }
     
+    public void Controlar234(char a,char b, String EstiloJuego,int labelB) {
+        controles.cartones.CartonDisponible();
+        Carton CT = controles.cartones.getCarton(a);
+        Carton CTT = controles.cartones.getCarton(b);
+        CT.setNoDisponible();
+        CTT.setNoDisponible();
+        
+        if (controles.Juego(bola, EstiloJuego)){
+            System.out.println("Victoria");
+        }
+        MostrarCartonUser(b,a);
+    }
+    
     public void seleccionCarton(char n){
         int aux = 0;
         

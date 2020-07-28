@@ -6,16 +6,18 @@
 package conexion;
 import com.fazecast.jSerialComm.*;
 import java.util.ArrayList;
+import Interfaz.mainUI;
 
 /**
  *
  * @author Leonardo
  */
-public class conexion {
+public class conexion implements Runnable{
     SerialPort puertoE;
     SerialPort puertoS;
     String jugador;
     String bandera = "00000001";
+    mainUI mainB = new mainUI();
     
     public String getJugador() {
         return jugador;
@@ -85,15 +87,20 @@ public class conexion {
             e1.printStackTrace();
         }
     }
-   
-    public void lectura(){
+    
+    public void RecibirInfo(){
+        conexion proceso1 = this;
+        new Thread(proceso1).start();
+    } 
+    
+    @Override
+    public void run(){
  
         byte[] readbuffer = null;
         System.out.println("Jugador Actual: "+this.jugador+"\n"); 
         try{
             System.out.println(" En espera del mensaje");      
-            while(puertoE.bytesAvailable()<5){
-        }
+            while(puertoE.bytesAvailable()<5){}
             
         readbuffer = new byte[5]; 
         int numero = puertoE.readBytes(readbuffer, 5);
@@ -115,6 +122,7 @@ public class conexion {
         String destino = info.substring(2, 5);
      //   String instruc = info.substring(5); //instruccion de accion de la partida 
             
+        int aux = BinarioDecimal(informacion1);
         switch(destino){
                
             case "000":// lectura y envio de datos
@@ -122,49 +130,67 @@ public class conexion {
                     System.out.println("Origen: "+origen);
                     System.out.println("Destino: "+destino);
                     System.out.println("Info: "+informacion1);
-                    System.out.println("Info: "+infor2);
-                    
-                    enviar(informacion1,infor2);           
+                    enviar(informacion1,infor2); 
+                    System.out.println("Info: "+infor2);          
                 break;
                     
-                case "001": 
-                    System.out.println("Jugador 2 \n");
-                    System.out.println("Origen: "+origen);
-                    System.out.println("Destino: "+destino);
-                    System.out.println("Info: "+informacion1);
-                    System.out.println("Info: "+infor2);
-                    
-                    enviar(informacion1,infor2);
-                  break;
-                    
-                case "010":
-                    System.out.println("Jugador 3 \n");
-                    System.out.println("Origen: "+origen);
-                    System.out.println("Destino: "+destino);
-                    System.out.println("Info: "+informacion1);
-                    System.out.println("Info: "+infor2);
-                    
-                    enviar(informacion1,infor2);
-                    break;
-                case "011":
-                    System.out.println("Jugador 4 \n");
-                    System.out.println("Origen: "+origen);
-                    System.out.println("Destino: "+destino);
-                    System.out.println("Info: "+informacion1);
-                    System.out.println("Info: "+infor2);
-                    
-                    enviar(informacion1,infor2);
-                    break;
+            case "001": 
+                System.out.println("Jugador 2 \n");
+                System.out.println("Origen: "+origen);
+                System.out.println("Destino: "+destino);
+                System.out.println("Info: "+informacion1);
+                System.out.println("Info: "+infor2);
+                enviar(informacion1,infor2); 
+                mainB.Jugador234(aux);
+              break;
+
+            case "010":
+                System.out.println("Jugador 3 \n");
+                System.out.println("Origen: "+origen);
+                System.out.println("Destino: "+destino);
+                System.out.println("Info: "+informacion1);
+                System.out.println("Info: "+infor2);
+                enviar(informacion1,infor2); 
+                mainB.Jugador234(aux);
+            break;
+            case "011":
+                System.out.println("Jugador 4 \n");
+                System.out.println("Origen: "+origen);
+                System.out.println("Destino: "+destino);
+                System.out.println("Info: "+informacion1);
+                System.out.println("Info: "+infor2);
+                enviar(informacion1,infor2); 
+                mainB.Jugador234(aux);
+             break;
+        }
             
-            }
-            
-            
-            }catch(Exception e){
-                e.printStackTrace();
-            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         
 
 
+    }
+    
+    public int BinarioDecimal(String binario){
+        int codigo = Integer.parseInt(binario, 2);
+        
+        if (codigo >= 0 || codigo <= 74){
+            return codigo++;
+        }else {
+            return codigo;
+        }
+    }
+    
+    public String DecimalBinario(int num){
+        String binario;
+        binario = Integer.toBinaryString(num);
+        
+        while (binario.length() != 8){
+            binario = '0'+binario;
+        }
+        
+        return binario;
     }
     
    public String ConversionString(byte p){

@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 public class mainUI extends javax.swing.JFrame {
 int na,nb=-1;
 Controlador controler;
+conexion comunicacion;
 int contador;
 int num1 = -1;
 int num2 = -1;
@@ -36,9 +37,16 @@ int num2 = -1;
     public mainUI(){
         initComponents();
         jTabbedPane1.setVisible(false);
+        Play.setVisible(false);
         Controlador control = new Controlador(Bola,numB1,numB2,numB3,numB4,numB5,numI1,numI2,numI3,numI4,numI5,numN1,numN2,numN4,numN5,numG1,numG2,numG3,numG4,numG5,numO1,numO2,numO3,numO4,numO5,xB1,xB2,xB3,xB4,xB5,xI1,xI2,xI3,xI4,xI5,xN1,xN2,xN4,xN5,xG1,xG2,xG3,xG4,xG5,xO1,xO2,xO3,xO4,xO5,numB11,numB12,numB13,numB14,numB15,numI11,numI12,numI13,numI14,numI15,numN7,numN8,numN9,numN10,numG6,numG7,numG8,numG9,numG10,numO6,numO7,numO8,numO9,numO10,xB11,xB12,xB13,xB14,xB15,xI11,xI12,xI13,xI14,xI15,xN7,xN8,xN9,xN10,xG6,xG7,xG8,xG9,xG10,xO6,xO7,xO8,xO9,xO10,numSB1,numSB2,numSB3,numSB4,numSB5,numSI1,numSI2,numSI3,numSI4,numSI5,numSN1,numSN2,numSN4,numSN5,numSG1,numSG2,numSG3,numSG4,numSG5,numSO1,numSO2,numSO3,numSO4,numSO5);
         this.controler = control;
         if (controler==null){System.out.println("A");}
+        jComboBox1.removeAllItems();
+        jComboBox2.removeAllItems();
+        for(String puerto: conexion.listaConexion()){
+            jComboBox1.addItem(puerto);
+            jComboBox2.addItem(puerto);
+        }
     }
     private void SelectMouseClicked(java.awt.event.MouseEvent evt) {                                    
         
@@ -224,6 +232,15 @@ int num2 = -1;
         jButton1 = new javax.swing.JButton();
         EstiloJuego = new javax.swing.JComboBox<>();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         carton1 = new javax.swing.JPanel();
         b6 = new javax.swing.JLabel();
@@ -291,16 +308,6 @@ int num2 = -1;
         jButton2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jComboBox4 = new javax.swing.JComboBox<>();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 204, 255));
@@ -750,6 +757,7 @@ int num2 = -1;
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Play.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_play_40px.png"))); // NOI18N
+        Play.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Play.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PlayMouseClicked(evt);
@@ -1239,8 +1247,85 @@ int num2 = -1;
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Play)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setText("Configuración de Conexión");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("Selecciona tus Puertos");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Selecciona tu Jugador");
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador 4", "Jugador 3", "Jugador 2", "Jugador 1" }));
+
+        jLabel10.setText("Puerto de Entrada");
+
+        jLabel11.setText("Puerto de Salida");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel9)))
+                .addContainerGap(241, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(244, 244, 244)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(244, 244, 244)
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(238, 238, 238)
+                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addGap(5, 5, 5)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Conexion", jPanel7);
 
         jPanel3.setEnabled(false);
 
@@ -1630,7 +1715,7 @@ int num2 = -1;
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1730,95 +1815,6 @@ int num2 = -1;
 
         jTabbedPane1.addTab("Cartones", jPanel3);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("Configuración de Conexión");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("Selecciona tus Puertos");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("Selecciona tu Jugador");
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador 4", "Jugador 3", "Jugador 2", "Jugador 1" }));
-
-        jButton3.setText("Conectar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setText("Puerto de Entrada");
-
-        jLabel11.setText("Puerto de Salida");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(184, 184, 184)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jButton3)))
-                .addContainerGap(241, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(238, 238, 238)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
-                .addGap(5, 5, 5)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(19, 19, 19))
-        );
-
-        jTabbedPane1.addTab("Conexion", jPanel7);
-
         jLayeredPane1.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jTabbedPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -1841,8 +1837,9 @@ int num2 = -1;
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, Short.MAX_VALUE)
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(21, 21, 21)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 32, Short.MAX_VALUE)))
+                    .addContainerGap(36, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1872,8 +1869,27 @@ int num2 = -1;
             controler.Controlar((char)num1,(char)num2, EstiloJuego.getSelectedItem().toString());
             jButton1.setEnabled(false);
         }
+        
+        int labelBola = Integer.parseInt(Bola.getText());
+        System.out.println ("Estableciendo Conexion");
+        comunicacion.enviar(comunicacion.DecimalBinario(labelBola), "00000001");
     }//GEN-LAST:event_PlayMouseClicked
 
+    public void Jugador234(int LBola){
+        String labelJ = Integer.toString(LBola);
+        Bola.setText(labelJ);
+        revalidate();
+        repaint();
+        System.out.println (Integer.toString(LBola));
+        /*if (num1 != -1 || num2 != -1){
+            EstiloJuego.setEnabled(false);
+            controler.Controlar((char)num1,(char)num2, EstiloJuego.getSelectedItem().toString());
+            jButton1.setEnabled(false);
+          }
+        comunicacion.RecibirInfo();*/
+    }
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         controler.seleccionCarton((char)(Select.getSelectedIndex()+65));
         jPanel2.setVisible(false);
@@ -1921,66 +1937,43 @@ int num2 = -1;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        System.out.println ("Estableciendo Conexion");
+        String str = jComboBox3.getItemAt(jComboBox3.getSelectedIndex());
+        comunicacion= new conexion(jComboBox1.getSelectedIndex(),jComboBox2.getSelectedIndex());
+        switch(str){
+            case "Jugador 1":
+                JOptionPane.showMessageDialog(null, "Presione Start Para iniciar");
+                System.out.println ("Iniciando Juego");
+                comunicacion.setJugador("000");
+                Play.setVisible(true);
+            break;
+
+            case "Jugador 2":
+                JOptionPane.showMessageDialog(null, "Espere a que el jugador 1 inicie el juego");
+                comunicacion.setJugador("001");
+                comunicacion.RecibirInfo();
+                System.out.println("En Espera");
+            break;
+
+            case "Jugador 3":
+                JOptionPane.showMessageDialog(null, "Espere a que el jugador 1 inicie el juego");
+                comunicacion.setJugador("010");
+                comunicacion.RecibirInfo();
+                System.out.println("En Espera");
+            break;
+
+            case "Jugador 4":
+                JOptionPane.showMessageDialog(null, "Espere a que el jugador 1 inicie el juego");
+                comunicacion.setJugador("011");
+                comunicacion.RecibirInfo();
+                System.out.println("En Espera");
+            break;
+        }
         EstiloJuego.setEnabled(true);
         controler.MostrarCartonUser((char)num2, (char)num1);
         jPanel2.setVisible(true);
         jTabbedPane1.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String jugador = "";
-
-        System.out.println ("Conexiones de pruebas");
-
-        System.out.println ("Indique el numero de jugador(del 1 al 4):");
-
-        String str = jComboBox3.getItemAt(jComboBox3.getSelectedIndex());
-        switch(str){
-            case "Jugador 1":
-            conexion prueba1= new conexion(jComboBox1.getSelectedIndex(),jComboBox2.getSelectedIndex()); //Entrada, Salida
-            prueba1.setJugador("000");
-
-            prueba1.enviar("00000001", "00000011");
-
-            System.out.println("Entrando a leer");
-            prueba1.lectura();
-            break;
-
-            case "Jugador 2":
-            conexion prueba2= new conexion(jComboBox1.getSelectedIndex(),jComboBox2.getSelectedIndex());
-            prueba2.setJugador("001");
-
-            //  prueba2.enviar("00000001", "00000011");
-
-            prueba2.lectura();
-            break;
-
-            case "Jugador 3":
-            conexion prueba3= new conexion(jComboBox1.getSelectedIndex(),jComboBox2.getSelectedIndex());
-            prueba3.setJugador("010");
-
-            //  prueba3.enviar("00000001", "00000011");
-
-            prueba3.lectura();
-            break;
-
-            case "Jugador 4":
-            conexion prueba4= new conexion(jComboBox1.getSelectedIndex(),jComboBox2.getSelectedIndex());
-            prueba4.setJugador("011");
-
-            //   prueba4.enviar("00000001", "00000011");
-
-            prueba4.lectura();
-            break;
-            case "0":
-            System.exit(0);
-            break;
-        }
-
-        mainUI pantalla_1 = new mainUI();
-        pantalla_1.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2064,7 +2057,6 @@ int num2 = -1;
     private javax.swing.JPanel i9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

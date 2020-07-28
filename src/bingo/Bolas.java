@@ -1,6 +1,7 @@
 package bingo;
 
 import java.util.Random;
+import conexion.conexion;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -62,8 +63,6 @@ public class Bolas {
             Logger.getLogger(Bolas.class.getName()).log(Level.SEVERE, null, ex);
         }
     
-
-        
         return this.Bolas[bola];
     }
     
