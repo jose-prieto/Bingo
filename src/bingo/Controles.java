@@ -16,6 +16,14 @@ public class Controles {
         bolas.SacarBola(bola);
         return cartones.RevisarCartones(StiloJuego);
     }
+    
+    public boolean Juego234(JLabel bola, String StiloJuego) { 
+        bolas.setRango(75);
+        bolas.setAux(0);
+        bolas.BolaNoDisponible(bola);
+        return cartones.RevisarCartones(StiloJuego);
+    }
+    
     public Cartones getCartones(){
         return cartones;
     }

@@ -66,6 +66,7 @@ public class Bolas {
         return this.Bolas[bola];
     }
     
+    
     public Bola SacarBola(){
         Random rand = new Random();
         int bola;
@@ -87,6 +88,15 @@ public class Bolas {
         for(int i=0;i<=74;i++){
             System.out.println(Bolas[i].getEstado());
             
+        }
+    }
+    
+    public void BolaNoDisponible(JLabel bola){
+        for(int i=0;i<=74;i++){
+            if (Integer.toString(Bolas[i].getBola()).equals(bola.getText())){
+                Bolas[i].setNoDisponible();
+                break;
+            }
         }
     }
 }

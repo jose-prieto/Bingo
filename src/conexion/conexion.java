@@ -17,7 +17,7 @@ public class conexion implements Runnable{
     SerialPort puertoS;
     String jugador;
     String bandera = "00000001";
-    mainUI mainB = new mainUI();
+    public mainUI mainB;
     
     public String getJugador() {
         return jugador;
@@ -126,13 +126,13 @@ public class conexion implements Runnable{
         switch(destino){
                
             case "000":// lectura y envio de datos
-                    System.out.println("Jugador 1 \n");
-                    System.out.println("Origen: "+origen);
-                    System.out.println("Destino: "+destino);
-                    System.out.println("Info: "+informacion1);
-                    enviar(informacion1,infor2); 
-                    System.out.println("Info: "+infor2);          
-                break;
+                System.out.println("Jugador 1 \n");
+                System.out.println("Origen: "+origen);
+                System.out.println("Destino: "+destino);
+                System.out.println("Info: "+informacion1);
+                enviar(informacion1,infor2); 
+                System.out.println("Info: "+infor2);          
+            break;
                     
             case "001": 
                 System.out.println("Jugador 2 \n");
@@ -140,9 +140,10 @@ public class conexion implements Runnable{
                 System.out.println("Destino: "+destino);
                 System.out.println("Info: "+informacion1);
                 System.out.println("Info: "+infor2);
-                enviar(informacion1,infor2); 
+                enviar(informacion1,infor2);
+                //mainB.Bola.setText(labelJ);
                 mainB.Jugador234(aux);
-              break;
+            break;
 
             case "010":
                 System.out.println("Jugador 3 \n");
