@@ -1,5 +1,6 @@
 package bingo;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 //En el controlador haremos control de todo lo necesario que se necesita tanto para el juego como para el usuario
 //compra de cartones, saldo del jugador en cuestion, etc
 public class Controlador {
@@ -155,6 +156,8 @@ public class Controlador {
         
         if (controles.Juego(bola, EstiloJuego)){
             System.out.println("Victoria");
+            JOptionPane.showMessageDialog(null, "Usted ha ganado el juego");
+            System.exit(0);
         }
         MostrarCartonUser(b,a);
     }
@@ -168,6 +171,8 @@ public class Controlador {
         
         if (controles.Juego234(bola, EstiloJuego)){
             System.out.println("Victoria");
+            JOptionPane.showMessageDialog(null, "Usted ha ganado el juego");
+            System.exit(0);
         }
         MostrarCartonUser(b,a);
     }
