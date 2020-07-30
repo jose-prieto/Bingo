@@ -62,6 +62,24 @@ public class Cartones {
         return aux;
     }
     
+    public boolean RevisarCarton(String juego, Carton carton){
+        boolean aux = false;
+        
+        if (juego.equals("Juego de línea")){
+            if (marcador.Linea(carton).equals("Ganador")){
+                carton.setGanador();
+                aux = true;
+            }
+        }else{
+            if (marcador.Completo(carton).equals("Ganador")){
+                carton.setGanador();
+                aux = true;
+            }
+        }
+        
+        return aux;
+    }
+    
     public boolean CartonDisponible(){
         boolean aux = false;
         for (int i=0;i<=25;i++){

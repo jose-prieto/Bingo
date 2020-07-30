@@ -10,18 +10,18 @@ public class Controles {
                                              //los cartones que tengan la bola que salió
     
     //procedimientos necesarior par hacer posible el juego
-    public boolean Juego(JLabel bola, String StiloJuego) { 
+    public boolean Juego(JLabel bola, String StiloJuego, Carton carton) { 
         bolas.setRango(75);
         bolas.setAux(0);
         bolas.SacarBola(bola);
-        return cartones.RevisarCartones(StiloJuego);
+        return cartones.RevisarCarton(StiloJuego, carton);
     }
     
-    public boolean Juego234(JLabel bola, String StiloJuego) { 
+    public boolean Juego234(JLabel bola, String StiloJuego, Carton carton) { 
         bolas.setRango(75);
         bolas.setAux(0);
         bolas.BolaNoDisponible(bola);
-        return cartones.RevisarCartones(StiloJuego);
+        return cartones.RevisarCarton(StiloJuego, carton);
     }
     
     public Cartones getCartones(){

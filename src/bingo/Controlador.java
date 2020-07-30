@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 //compra de cartones, saldo del jugador en cuestion, etc
 public class Controlador {
     JLabel bola;
+    JLabel carton1;
+    JLabel carton2;
     
     JLabel[] Carton1 = new JLabel[24];;
     JLabel[] Carton1X = new JLabel[24];;
@@ -13,14 +15,17 @@ public class Controlador {
     JLabel[] Carton2X = new JLabel[24];;
     
     JLabel[] CartonConf = new JLabel[24];
+    String gana = "Ya hay cartón ganador";
     
      public Controles controles = new Controles();
     
     String nombre;
     int numero_jugador;
     
-    public Controlador(JLabel bola,JLabel B1,JLabel B2,JLabel B3,JLabel B4,JLabel B5,JLabel I1,JLabel I2,JLabel I3,JLabel I4,JLabel I5,JLabel N1,JLabel N2,JLabel N4,JLabel N5,JLabel G1,JLabel G2,JLabel G3,JLabel G4,JLabel G5,JLabel O1,JLabel O2,JLabel O3,JLabel O4,JLabel O5,JLabel XB1,JLabel XB2,JLabel XB3,JLabel XB4,JLabel XB5,JLabel XI1,JLabel XI2,JLabel XI3,JLabel XI4,JLabel XI5,JLabel XN1,JLabel XN2,JLabel XN4,JLabel XN5,JLabel XG1,JLabel XG2,JLabel XG3,JLabel XG4,JLabel XG5,JLabel XO1,JLabel XO2,JLabel XO3,JLabel XO4,JLabel XO5,JLabel c2B1,JLabel c2B2,JLabel c2B3,JLabel c2B4,JLabel c2B5,JLabel c2I1,JLabel c2I2,JLabel c2I3,JLabel c2I4,JLabel c2I5,JLabel c2N1,JLabel c2N2,JLabel c2N4,JLabel c2N5,JLabel c2G1,JLabel c2G2,JLabel c2G3,JLabel c2G4,JLabel c2G5,JLabel c2O1,JLabel c2O2,JLabel c2O3,JLabel c2O4,JLabel c2O5,JLabel c2XB1,JLabel c2XB2,JLabel c2XB3,JLabel c2XB4,JLabel c2XB5,JLabel c2XI1,JLabel c2XI2,JLabel c2XI3,JLabel c2XI4,JLabel c2XI5,JLabel c2XN1,JLabel c2XN2,JLabel c2XN4,JLabel c2XN5,JLabel c2XG1,JLabel c2XG2,JLabel c2XG3,JLabel c2XG4,JLabel c2XG5,JLabel c2XO1,JLabel c2XO2,JLabel c2XO3,JLabel c2XO4,JLabel c2XO5,JLabel sB1,JLabel sB2,JLabel sB3,JLabel sB4,JLabel sB5,JLabel sI1,JLabel sI2,JLabel sI3,JLabel sI4,JLabel sI5,JLabel sN1,JLabel sN2,JLabel sN4,JLabel sN5,JLabel sG1,JLabel sG2,JLabel sG3,JLabel sG4,JLabel sG5,JLabel sO1,JLabel sO2,JLabel sO3,JLabel sO4,JLabel sO5){
+    public Controlador(JLabel bola,JLabel carton1,JLabel carton2,JLabel B1,JLabel B2,JLabel B3,JLabel B4,JLabel B5,JLabel I1,JLabel I2,JLabel I3,JLabel I4,JLabel I5,JLabel N1,JLabel N2,JLabel N4,JLabel N5,JLabel G1,JLabel G2,JLabel G3,JLabel G4,JLabel G5,JLabel O1,JLabel O2,JLabel O3,JLabel O4,JLabel O5,JLabel XB1,JLabel XB2,JLabel XB3,JLabel XB4,JLabel XB5,JLabel XI1,JLabel XI2,JLabel XI3,JLabel XI4,JLabel XI5,JLabel XN1,JLabel XN2,JLabel XN4,JLabel XN5,JLabel XG1,JLabel XG2,JLabel XG3,JLabel XG4,JLabel XG5,JLabel XO1,JLabel XO2,JLabel XO3,JLabel XO4,JLabel XO5,JLabel c2B1,JLabel c2B2,JLabel c2B3,JLabel c2B4,JLabel c2B5,JLabel c2I1,JLabel c2I2,JLabel c2I3,JLabel c2I4,JLabel c2I5,JLabel c2N1,JLabel c2N2,JLabel c2N4,JLabel c2N5,JLabel c2G1,JLabel c2G2,JLabel c2G3,JLabel c2G4,JLabel c2G5,JLabel c2O1,JLabel c2O2,JLabel c2O3,JLabel c2O4,JLabel c2O5,JLabel c2XB1,JLabel c2XB2,JLabel c2XB3,JLabel c2XB4,JLabel c2XB5,JLabel c2XI1,JLabel c2XI2,JLabel c2XI3,JLabel c2XI4,JLabel c2XI5,JLabel c2XN1,JLabel c2XN2,JLabel c2XN4,JLabel c2XN5,JLabel c2XG1,JLabel c2XG2,JLabel c2XG3,JLabel c2XG4,JLabel c2XG5,JLabel c2XO1,JLabel c2XO2,JLabel c2XO3,JLabel c2XO4,JLabel c2XO5,JLabel sB1,JLabel sB2,JLabel sB3,JLabel sB4,JLabel sB5,JLabel sI1,JLabel sI2,JLabel sI3,JLabel sI4,JLabel sI5,JLabel sN1,JLabel sN2,JLabel sN4,JLabel sN5,JLabel sG1,JLabel sG2,JLabel sG3,JLabel sG4,JLabel sG5,JLabel sO1,JLabel sO2,JLabel sO3,JLabel sO4,JLabel sO5){
         this.bola=bola;
+        this.carton1=carton2;
+        this.carton2=carton1;
         this.Carton1[0]=B1;
         this.Carton1[1]=B2;
         this.Carton1[2]=B3;
@@ -153,10 +158,18 @@ public class Controlador {
         Carton CTT = controles.cartones.getCarton(b);
         CT.setNoDisponible();
         CTT.setNoDisponible();
-        
-        if (controles.Juego(bola, EstiloJuego)){
+        if (controles.Juego(bola, EstiloJuego, CT)){
             System.out.println("Victoria");
-            JOptionPane.showMessageDialog(null, "Usted ha ganado el juego");
+            this.carton1.setVisible(true);
+            MostrarCartonUser(b,a);
+            JOptionPane.showMessageDialog(null, gana);
+            System.exit(0);
+        }
+        if (controles.Juego(bola, EstiloJuego, CTT)){
+            System.out.println("Victoria");
+            this.carton2.setVisible(true);
+            MostrarCartonUser(b,a);
+            JOptionPane.showMessageDialog(null, gana);
             System.exit(0);
         }
         MostrarCartonUser(b,a);
@@ -169,9 +182,18 @@ public class Controlador {
         CT.setNoDisponible();
         CTT.setNoDisponible();
         
-        if (controles.Juego234(bola, EstiloJuego)){
+        if (controles.Juego234(bola, EstiloJuego, CT)){
             System.out.println("Victoria");
-            JOptionPane.showMessageDialog(null, "Usted ha ganado el juego");
+            this.carton1.setVisible(true);
+            MostrarCartonUser(b,a);
+            JOptionPane.showMessageDialog(null, gana);
+            System.exit(0);
+        }
+        if (controles.Juego234(bola, EstiloJuego, CTT)){
+            System.out.println("Victoria");
+            this.carton2.setVisible(true);
+            MostrarCartonUser(b,a);
+            JOptionPane.showMessageDialog(null, gana);
             System.exit(0);
         }
         MostrarCartonUser(b,a);

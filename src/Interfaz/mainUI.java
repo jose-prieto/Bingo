@@ -43,7 +43,9 @@ String bandera = "00000001";
         initComponents();
         jTabbedPane1.setVisible(false);
         Play.setVisible(false);
-        Controlador control = new Controlador(Bola,numB1,numB2,numB3,numB4,numB5,numI1,numI2,numI3,numI4,numI5,numN1,numN2,numN4,numN5,numG1,numG2,numG3,numG4,numG5,numO1,numO2,numO3,numO4,numO5,xB1,xB2,xB3,xB4,xB5,xI1,xI2,xI3,xI4,xI5,xN1,xN2,xN4,xN5,xG1,xG2,xG3,xG4,xG5,xO1,xO2,xO3,xO4,xO5,numB11,numB12,numB13,numB14,numB15,numI11,numI12,numI13,numI14,numI15,numN7,numN8,numN9,numN10,numG6,numG7,numG8,numG9,numG10,numO6,numO7,numO8,numO9,numO10,xB11,xB12,xB13,xB14,xB15,xI11,xI12,xI13,xI14,xI15,xN7,xN8,xN9,xN10,xG6,xG7,xG8,xG9,xG10,xO6,xO7,xO8,xO9,xO10,numSB1,numSB2,numSB3,numSB4,numSB5,numSI1,numSI2,numSI3,numSI4,numSI5,numSN1,numSN2,numSN4,numSN5,numSG1,numSG2,numSG3,numSG4,numSG5,numSO1,numSO2,numSO3,numSO4,numSO5);
+        Carton2.setVisible(false);
+        Carton1.setVisible(false);
+        Controlador control = new Controlador(Bola,Carton1,Carton2,numB1,numB2,numB3,numB4,numB5,numI1,numI2,numI3,numI4,numI5,numN1,numN2,numN4,numN5,numG1,numG2,numG3,numG4,numG5,numO1,numO2,numO3,numO4,numO5,xB1,xB2,xB3,xB4,xB5,xI1,xI2,xI3,xI4,xI5,xN1,xN2,xN4,xN5,xG1,xG2,xG3,xG4,xG5,xO1,xO2,xO3,xO4,xO5,numB11,numB12,numB13,numB14,numB15,numI11,numI12,numI13,numI14,numI15,numN7,numN8,numN9,numN10,numG6,numG7,numG8,numG9,numG10,numO6,numO7,numO8,numO9,numO10,xB11,xB12,xB13,xB14,xB15,xI11,xI12,xI13,xI14,xI15,xN7,xN8,xN9,xN10,xG6,xG7,xG8,xG9,xG10,xO6,xO7,xO8,xO9,xO10,numSB1,numSB2,numSB3,numSB4,numSB5,numSI1,numSI2,numSI3,numSI4,numSI5,numSN1,numSN2,numSN4,numSN5,numSG1,numSG2,numSG3,numSG4,numSG5,numSO1,numSO2,numSO3,numSO4,numSO5);
         this.controler = control;
         if (controler==null){System.out.println("A");}
         jComboBox1.removeAllItems();
@@ -68,6 +70,7 @@ String bandera = "00000001";
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel2 = new javax.swing.JPanel();
         carton = new javax.swing.JPanel();
@@ -236,6 +239,8 @@ String bandera = "00000001";
         numO10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         EstiloJuego = new javax.swing.JComboBox<>();
+        Carton2 = new javax.swing.JLabel();
+        Carton1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -313,6 +318,8 @@ String bandera = "00000001";
         jButton2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jComboBox4 = new javax.swing.JComboBox<>();
+
+        jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 204, 255));
@@ -1205,6 +1212,14 @@ String bandera = "00000001";
 
         EstiloJuego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juego de línea", "Juego de cartón lleno" }));
 
+        Carton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Carton2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Carton2.setText("Ganador");
+
+        Carton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Carton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Carton1.setText("Ganador");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -1214,9 +1229,11 @@ String bandera = "00000001";
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(EstiloJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 470, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(carton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(carton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Carton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1228,9 +1245,14 @@ String bandera = "00000001";
                                 .addComponent(Play))
                             .addComponent(jLabel1))
                         .addGap(24, 24, 24)
-                        .addComponent(carton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Carton2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(carton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -1252,7 +1274,10 @@ String bandera = "00000001";
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Play)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Carton2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Carton1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -2174,6 +2199,8 @@ String bandera = "00000001";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bola;
+    private javax.swing.JLabel Carton1;
+    private javax.swing.JLabel Carton2;
     private javax.swing.JComboBox<String> EstiloJuego;
     private javax.swing.JLabel Play;
     private javax.swing.JComboBox<String> Select;
@@ -2248,6 +2275,7 @@ String bandera = "00000001";
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
